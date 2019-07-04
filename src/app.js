@@ -5,7 +5,7 @@ const geocode = require('./utils/geocode')      //user defined modules
 const forecast = require('./utils/forecast')
 
 const app = express()   //call express function once to create express application ie app
-
+const port = process.env.PORT || 3000     //(for heroku || for local application)
 // Defined paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -92,6 +92,6 @@ app.get('*', (req,res) => {
         name: 'Ashish Saxena'
     })
 })
-app.listen(3000, () => {    //3000 is port
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {    //3000 is port
+    console.log('Server is up on port: '+ port)
 })
