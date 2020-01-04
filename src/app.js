@@ -8,9 +8,8 @@ const app = express()   //call express function once to create express applicati
 const port = process.env.PORT || 3000     //(for heroku || for local application)
 // Defined paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
-const viewsPath = path.join(__dirname,'../templates/views')
-const partialsPath = path.join(__dirname,'../templates/partials')
-
+const viewsPath = path.join(__dirname,'templates/views')
+const partialsPath = path.join(__dirname,'templates/partials')
 //Set up handlebars engine and view location
 app.set('view engine', 'hbs')   // we have to tell express about the template engine we set up using "app.set('express-setting-name','value')"
 app.set('views', viewsPath)     //all views have to be stored in the views directory,otherwise express can't render them. If we want to place the views in directory with any other name, we use app.set() that sets the views property so express can now render views from any other folder(not named views)
@@ -28,7 +27,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req,res)=>{  
     res.render('about',{        //about is fileName
-        title:'About Me',
+        title:'About',
         name:'Ashish Saxena' 
     })
 })
