@@ -1,3 +1,7 @@
+//START SCRIPT in PACKAGE.JSON: heroku looks for "start" script to start app, can be run locally using "npm run start"
+//Comment made here bcoz JSON can not have comments
+
+
 const path = require('path')            //core-node-module
 const express = require('express')      //npm modules
 const hbs = require('hbs')              
